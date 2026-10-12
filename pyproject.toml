@@ -1,0 +1,15 @@
+[project]
+name = "gateway-deliver"
+version = "0.1.0"
+description = "Generic HTTP request forwarding gateway for Cloudflare Workers"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "workers-py",
+    "workers-runtime-sdk",
+]
+
+[tool.uv]
+package = false

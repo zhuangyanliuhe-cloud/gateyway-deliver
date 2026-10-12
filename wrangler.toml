@@ -1,0 +1,24 @@
+name = "gateway-deliver"
+main = "src/entry.py"
+compatibility_date = "2026-09-22"
+compatibility_flags = ["python_workers"]
+
+# Optional: require callers to send this token via
+#   Authorization: Bearer <token>
+#   or X-Gateway-Key: <token>
+# Set with: npx wrangler secret put GATEWAY_TOKEN
+# [vars]
+# GATEWAY_TOKEN = ""
+
+# Optional: comma-separated host allowlist. Empty = allow any host.
+# Example: "api.example.com,httpbin.org"
+# ALLOWED_HOSTS = ""
+
+# Optional: named route map as JSON object.
+# Key = route name (used with X-Route / ?__route=), value = base URL.
+# Example: '{"demo":"https://httpbin.org","petstore":"https://petstore.swagger.io/v2"}'
+# ROUTE_MAP = ""
+
+[vars]
+ALLOWED_HOSTS = ""
+ROUTE_MAP = ""
