@@ -1,10 +1,14 @@
-"""Cloudflare Worker entrypoint — generic HTTP request gateway."""
+"""Process entry shim.
 
-from workers import WorkerEntrypoint
+The service runs as a normal ASGI process::
 
-from gateway import proxy_request
+    uv run python src/app.py
+"""
+
+from app import app, main
+
+__all__ = ["app", "main"]
 
 
-class Default(WorkerEntrypoint):
-    async def fetch(self, request):
-        return await proxy_request(request, self.env)
+if __name__ == "__main__":
+    main()
